@@ -300,3 +300,31 @@ body {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+/* Current Player */
+
+.current-player-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.current-player-card{
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  display: inline-block;
+}
+
+.current-player-name{
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.current-player-category{
+  font-size: 2rem;
+  margin: 0;
+}
