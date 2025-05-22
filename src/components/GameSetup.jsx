@@ -9,11 +9,7 @@ export default function GameSetup ({
   setPlayerCategories,
   onStartGame
 }) {
-  const canStartGame = 
-    playerCategories[1] && 
-    playerCategories[2] && 
-    playerNames[1].trim() && 
-    playerNames[2].trim();
+  const canStartGame = playerCategories[1] && playerCategories[2] && playerNames[1].trim() && playerNames[2].trim();
 
   return (
     <div className="setup-card">

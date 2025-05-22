@@ -6,7 +6,7 @@ export default function Header(){
         <div className="header">
             <h1 className="title">Blink Tac Toe</h1>
             <p className="subtitle">Where emojis vanish and strategy matters !!</p>
-            <p className="subtitle">By: Aditya Mathur</p>
+            <p className="by">By: Aditya Mathur</p>
         </div>
     )
 }
