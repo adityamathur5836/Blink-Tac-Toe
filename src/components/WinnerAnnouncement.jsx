@@ -8,7 +8,7 @@ export default function WinnerAnnouncement({winner, playerNames, playerCategorie
     return (
         <div className="winner-container">
             <div className="winner-card">
-                <div className="winner-title">🎉 {playerNames[winner]} Wins! </div>
+                <div className="winner-title">🎉 {playerNames[winner]} Wins! 🎉</div>
                 <div className="winner-subtitle">
                     {winnerCategory?.name} category prevails!
                 </div>

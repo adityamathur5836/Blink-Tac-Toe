@@ -28,10 +28,11 @@ export default function GameBoard({
                 playerCategories={playerCategories}/>
             )}
 
-            {winner &&  (<WinnerAnnouncement 
-            winner={winner}
-            playerNames={playerNames}
-            playerCategories={playerCategories}
+            {winner &&  (
+                <WinnerAnnouncement 
+                winner={winner}
+                playerNames={playerNames}
+                playerCategories={playerCategories}
             />)}
 
             <Board 

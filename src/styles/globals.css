@@ -365,7 +365,7 @@ body {
 
 /* Board */
 
-.board.grid{
+.board-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
@@ -489,4 +489,60 @@ body {
 .winner-subtitle {
   font-size: 1.2rem;
   margin: 0;
+}
+
+/* Animations Used */
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  70% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsiveness */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem !important;
+  }
+  
+  .board-grid {
+    max-width: 300px !important;
+  }
+  
+  .cell {
+    font-size: 3rem !important;
+  }
+  
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .player-status-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .control-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }

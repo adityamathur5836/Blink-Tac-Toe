@@ -2,7 +2,7 @@ import React from 'react';
 import PlayerSetup from './PlayerSetup';
 import '../styles/globals.css';
 
-export default function GameSetup ({
+export default function GameSetup({
   playerNames,
   setPlayerNames,
   playerCategories,

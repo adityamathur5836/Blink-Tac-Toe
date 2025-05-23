@@ -1,8 +1,8 @@
 import { emojiCategories } from '../data/emojicategories';
-import '../styles/globals.css';
 import CategoryButton from './CategoryButton';
+import '../styles/globals.css';
 
-export default function PlayerSetup ({
+export default function PlayerSetup({
     playerNumber,
     playerName,
     selectedCategory,

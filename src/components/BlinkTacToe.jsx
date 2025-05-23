@@ -94,9 +94,29 @@ export default function BlinkTacToe(){
     const startGame = () => {
         if (!playerCategories[1] || !playerCategories[2] || !playerNames[1].trim() || !playerNames[2].trim()) return;
         setGamePhase('playing');
-      };
-    
+    };
 
+    function resetGame(){
+        setBoard(Array(9).fill(null));
+        setCurrentPlayer(1);
+        setPlayerEmojis({1 : [], 2 : []});
+        setWinner(null);
+        setWinningLine([]);
+        setGamePhase('setup');
+        setPlayerNames({1 : "", 2 : ""});
+        setPlayerCategories({1 : null, 2 : null});
+        setAnimatingCells(new Set());
+    };
+
+    function playAgain(){
+        setBoard(Array(9).fill(null));
+        setCurrentPlayer(1);
+        setPlayerEmojis({1 : [], 2 : []});
+        setWinner(null);
+        setWinningLine([]);
+        setGamePhase('playing');
+        setAnimatingCells(new Set());
+    }    
 
     return (
         <div className="game-container">
@@ -128,7 +148,11 @@ export default function BlinkTacToe(){
                 board={board}
                 winningLine={winningLine}
                 animatingCells={animatingCells}
-                onCellClick={handeCellClick}/>
+                onCellClick={handeCellClick}
+                onPlayAgain = {playAgain}
+                onReset={resetGame}
+                winner={winner}
+                />   
             )}
         </div>
     )
