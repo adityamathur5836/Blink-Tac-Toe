@@ -328,3 +328,96 @@ body {
   font-size: 2rem;
   margin: 0;
 }
+
+/* Cell */
+
+.cell{
+  aspect-ratio: 1;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  border-radius: 12px;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cell.clickable{
+  cursor: pointer;
+}
+
+.cell.clickable:hover{
+  background: rgba(255,255,255,0.4);
+  transform: scale(1.05);
+}
+
+.cell.winning{
+  background: #fde047;
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.6);
+}
+
+.cell.animating{
+  animation: pulse 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* Board */
+
+.board.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto 30px;
+}
+
+/* Game Controls */
+
+.control-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.button{
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.play-again-button{
+  background: #10b981;
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.play-again-button:hover{
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.reset-button{
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.reset-button:hover{
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.game-board-container{
+  text-align: center;
+}
