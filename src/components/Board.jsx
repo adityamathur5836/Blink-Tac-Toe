@@ -6,7 +6,7 @@ export default function Board({board, winningLine, animatingCells, gamePhase, on
 
     return (
         <div className='board-grid'>
-            {board.map((cell, index) => {
+            {board.map((cell, index) => (
                 <Cell 
                 key={index}
                 index = {index}
@@ -15,7 +15,7 @@ export default function Board({board, winningLine, animatingCells, gamePhase, on
                 isAnimating={animatingCells.has(index)}
                 gamePhase={gamePhase}
                 onClick={() => onCellClick(index)}/>
-            })}
+            ))}
         </div>
     )
 }

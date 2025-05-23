@@ -421,3 +421,72 @@ body {
 .game-board-container{
   text-align: center;
 }
+
+/* Player Status */
+.player-status-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.player-status {
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  min-width: 200px;
+}
+
+.player-status-name {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.player-status-count {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.player-status-emojis {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.status-emoji {
+  font-size: 1.5rem;
+}
+
+/* Winner Announcement */
+
+.winner-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.winner-card {
+  background: #fbbf24;
+  color: #92400e;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  animation: bounce 1s infinite;
+}
+
+.winner-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.winner-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+}
