@@ -521,19 +521,19 @@ body {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
   
   .board-grid {
-    max-width: 300px !important;
+    max-width: 300px;
   }
   
   .cell {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
   
   .category-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .player-status-grid {

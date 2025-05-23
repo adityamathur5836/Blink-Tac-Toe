@@ -23,6 +23,7 @@ export default function BlinkTacToe(){
     const [playerEmojis, setPlayerEmojis] = useState({ 1: [], 2: [] });
     const [gameHistory, setGameHistory] = useState([]);
 
+    // To Get Random Emoji
     function getRandomEmoji(player){
         const category = playerCategories[player];
         if (!category) return null;
@@ -31,7 +32,7 @@ export default function BlinkTacToe(){
         return emojis[Math.floor(Math.random() * emojis.length)];
     }
 
-
+    // While Clicking on the Cell
     function handeCellClick(index){
         if (gamePhase !== 'playing' || board[index] || winner) return;
 
