@@ -32,7 +32,7 @@ export default function BlinkTacToe(){
         return emojis[Math.floor(Math.random() * emojis.length)];
     }
 
-    // While Clicking on the Cell
+    // When Clicking on the Cell
     function handeCellClick(index){
         if (gamePhase !== 'playing' || board[index] || winner) return;
 
@@ -40,6 +40,7 @@ export default function BlinkTacToe(){
         const currentEmoji = getRandomEmoji(currentPlayer);
         const currentPlayerEmojis = [...playerEmojis[currentPlayer]]
 
+        // Animation 
         setAnimatingCells(prev => new Set([...prev, index]));
         setTimeout(() => {
             setAnimatingCells(prev => {
@@ -49,17 +50,21 @@ export default function BlinkTacToe(){
             })
         }, 300);
 
+        // Vanishing Rule Handled
         if (currentPlayerEmojis.length >= 3){
             const oldestPosition = currentPlayerEmojis[0].positon;
 
+            // If try to place on the oldest position
             if (index === oldestPosition){
                 return 
             }
 
+            // Remove oldest emoji
             newBoard[oldestPosition] = null;
             currentPlayerEmojis.shift();
         }
 
+        // place new emoji
         const emojiData = {
             emoji: currentEmoji,
             player: currentPlayer,
@@ -70,9 +75,11 @@ export default function BlinkTacToe(){
         newBoard[index] = emojiData;
         currentPlayerEmojis.push(emojiData);
 
+        // Update State
         setBoard(newBoard);
         setPlayerEmojis({...playerEmojis, [currentPlayer] : currentPlayerEmojis});
 
+        // Check for Winner
         const result = checkWinner(newBoard);
         if (result){
             setWinner(result.winner)
@@ -80,6 +87,7 @@ export default function BlinkTacToe(){
             setGamePhase('ended');
             setScores(prev => ({...prev, [result.winner] : prev[result.winner] + 1}));
 
+            // Add to History
             setGameHistory(prev => [...prev, {
                 winner: result.winner,
                 timeStamp: Date.now(),
@@ -92,11 +100,13 @@ export default function BlinkTacToe(){
         }
     }
 
+    // Game Start
     const startGame = () => {
         if (!playerCategories[1] || !playerCategories[2] || !playerNames[1].trim() || !playerNames[2].trim()) return;
         setGamePhase('playing');
     };
 
+    // Reset the Game
     function resetGame(){
         setBoard(Array(9).fill(null));
         setCurrentPlayer(1);
@@ -109,6 +119,7 @@ export default function BlinkTacToe(){
         setAnimatingCells(new Set());
     };
 
+    // Play Again
     function playAgain(){
         setBoard(Array(9).fill(null));
         setCurrentPlayer(1);
