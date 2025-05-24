@@ -40,5 +40,17 @@ Players can enter their names during the setup phase. These names are:
 
 This feature enhances the multiplayer experience by giving each player their own identity.
 
+##📜 Match History Feature
+
+A Match History button was added to keep track of all completed games. When clicked, it opens a popup modal that shows:
+
+A list of all games played so far
+
+The winner of each game (by player name)
+
+The timestamp of when each game was finished
+
+This allows players to review their past matches and track progress across sessions during the current play.
+
 ---
 
