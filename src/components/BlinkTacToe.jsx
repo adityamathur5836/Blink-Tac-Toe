@@ -7,6 +7,8 @@ import GameSetup from "./GameSetup";
 import GameBoard from "./GameBoard";
 import { emojiCategories } from "../data/emojicategories";
 import checkWinner from "../utils/gameLogic";
+import MatchHistoryButton from "./MatchHistoryButton";
+import MatchHistoryModel from "./MatchHistoryModel";
 
 export default function BlinkTacToe(){
 
@@ -22,6 +24,7 @@ export default function BlinkTacToe(){
     const [winner, setWinner] = useState(null);
     const [playerEmojis, setPlayerEmojis] = useState({ 1: [], 2: [] });
     const [gameHistory, setGameHistory] = useState([]);
+    const [showMatchHistory, setShowMatchHistory] = useState(false);
 
     // To Get Random Emoji
     function getRandomEmoji(player){
@@ -133,14 +136,23 @@ export default function BlinkTacToe(){
     return (
         <div className="game-container">
             <Header />
-            <HelpButton onClick={() => {setShowHelp(true)}}/>
-            
-            {showHelp && (
-                <HelpModel onClose={() => setShowHelp(false)} />
+
+            <div className="help-hist">
+            <HelpButton onClick={() => setShowHelp(true)} />
+            <MatchHistoryButton onClick={() => setShowMatchHistory(true)} />
+            </div>
+
+            {showHelp && <HelpModel onClose={() => setShowHelp(false)} />}
+            {showMatchHistory && (
+                <MatchHistoryModel
+                gameHistory={gameHistory}
+                playerNames={playerNames}
+                onClose={() => setShowMatchHistory(false)}
+                />
             )}
 
             <ScoreBoard scores={scores} playerNames={playerNames}/>
-        
+                    
             {gamePhase === 'setup' && (
                 <GameSetup 
                 playerNames={playerNames}
